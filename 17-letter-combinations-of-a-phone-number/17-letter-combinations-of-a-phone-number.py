@@ -6,20 +6,19 @@ class Solution:
         generator = self._generator(digits, 0, digitMap)
         while True:
             try:
-                result.append(next(generator))
+                result.append("".join(next(generator)))
             except:
                 return result
         return result
         
-    # TODO: change return value to list, since we are currently creating a new string for each permutation
     def _generator(self, digits, i, digitMap):
         dList = digitMap[digits[i]]
         if not dList:
-            yield ''
+            yield []
         for letter in dList:
             if i == len(digits) - 1:
-                yield letter
+                yield [letter]
             else:
                 for ltr in self._generator(digits, i + 1, digitMap):
-                    yield letter + ltr
+                    yield [letter] + ltr
         
