@@ -1,16 +1,10 @@
 class Solution:
     def countVowelStrings(self, n: int) -> int:
-        count = 0
-        vowels = ["a","e","i","o","u"]
-        def rec(start, curLen):
-            nonlocal count
-            if start >= len(vowels) or curLen > n:
-                return
-            elif curLen == n:
-                count += 1
-                return
-            else:
-                for i in range(start, len(vowels)):
-                    rec(i, curLen + 1)
-        rec(0,0)
-        return count
+        vowelCount = [1, 1, 1, 1, 1]
+        if n == 1:
+            return sum(vowelCount)
+        while n > 1:
+            for i in range(1, len(vowelCount)):
+                vowelCount[i] += vowelCount[i - 1]
+            n -= 1
+        return sum(vowelCount)
