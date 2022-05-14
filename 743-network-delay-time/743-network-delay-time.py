@@ -1,12 +1,11 @@
 from collections import deque
-from heapq import heappush
 
 class Solution:
     def networkDelayTime(self, times: List[List[int]], n: int, k: int) -> int:
         reach = {}
         for time in times:
             if time[0] in reach:
-                heappush(reach[time[0]], [time[2], time[1]])
+                reach[time[0]].append([time[2], time[1]])
             else:
                 reach[time[0]] = [[time[2], time[1]]]
                 
