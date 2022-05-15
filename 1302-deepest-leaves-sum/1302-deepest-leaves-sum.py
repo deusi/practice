@@ -8,11 +8,10 @@ from collections import deque
 
 class Solution:
     def deepestLeavesSum(self, root: Optional[TreeNode]) -> int:
-        if not root:
-            return 0
-        
-        queue = deque([root])
         levelSum = 0
+        if not root:
+            return levelSum
+        queue = deque([root])
         while queue:
             level = len(queue)
             levelSum = 0
