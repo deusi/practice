@@ -1,26 +1,35 @@
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
-        if obstacleGrid[0][0] == 1:
-            return 0
         m, n = len(obstacleGrid), len(obstacleGrid[0])
-        obstacleGrid[0][0] = 1
-        for i in range(1, n):
-            if obstacleGrid[0][i] == 1:
-                obstacleGrid[0][i] = 0
-            else:
-                obstacleGrid[0][i] = min(1, obstacleGrid[0][i - 1])
-        for i in range(1, m):
-            if obstacleGrid[i][0] == 1:
-                obstacleGrid[i][0] = 0
-            else:
-                obstacleGrid[i][0] = min(1, obstacleGrid[i - 1][0])
+        if obstacleGrid[0][0] == 1 or obstacleGrid[m - 1][n - 1]:
+            return 0
+        # create row and column for dp
+        rowGrid = [obstacleGrid[0][i] for i in range(n)]
+        colGrid = [obstacleGrid[i][0] for i in range(m)]
         
+        # update row and column with values for dp
+        rowGrid[0], colGrid[0] = 1, 1
+        for i in range(1, n):
+            if rowGrid[i] == 1:
+                rowGrid[i] = 0
+            else:
+                rowGrid[i] = min(1, rowGrid[i - 1])
+                
         for i in range(1, m):
+            if colGrid[i] == 1:
+                colGrid[i] = 0
+            else:
+                colGrid[i] = min(1, colGrid[i - 1])
+        
+        prev = 0
+        for i in range(1, m):
+            prev = colGrid[i]
             for j in range(1, n):
                 if obstacleGrid[i][j] == 1:
-                    obstacleGrid[i][j] = 0
+                    rowGrid[j] = 0
                 else:
-                    obstacleGrid[i][j] = obstacleGrid[i - 1][j] + obstacleGrid[i][j - 1]
+                    rowGrid[j] = rowGrid[j] + prev
+                prev = rowGrid[j]
                     
-        return obstacleGrid[m - 1][n - 1]
+        return rowGrid[n - 1]
                     
