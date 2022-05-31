@@ -16,15 +16,18 @@ class Solution:
             if inDegree[node] == 0:
                 queue.append(node)
                 
+        # one of the ways of keeping track if all courses were taken        
+        coursesTaken = n
         semesters = 0
         while queue:
             semesters += 1
             for _ in range(len(queue)):
                 node = queue.popleft()
+                coursesTaken -= 1
                 for child in graph[node]:
                     inDegree[child] -= 1
                     if inDegree[child] == 0:
                         del inDegree[child]
                         queue.append(child)
                         
-        return semesters if sum(inDegree.values()) == 0 else -1
+        return semesters if coursesTaken == 0 else -1
