@@ -1,6 +1,6 @@
 class Solution:
     # Time Complexity: O(N!)
-    # Space Complexity: O(1)
+    # Space Complexity: O(N), due to recursion stack
     def totalNQueens(self, n: int) -> int:
         sols = 0
         columns, diagonal, antidiagonal = set(), set(), set()
