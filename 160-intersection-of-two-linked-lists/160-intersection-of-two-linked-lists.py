@@ -5,21 +5,26 @@
 #         self.next = None
 
 class Solution:
-    # Time Complexity: O(m + n), since we visit every element of the lists once
-    # Space Complexity O(m + n), since in the worst case we store each element in the set
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        visited = set()
+        lenA, lenB = 0, 0
         nodeA, nodeB = headA, headB
-        while nodeA or nodeB:
-            if nodeA:
-                if nodeA in visited:
-                    return nodeA
-                visited.add(nodeA)
-                nodeA = nodeA.next
-            if nodeB:
-                if nodeB in visited:
-                    return nodeB
-                visited.add(nodeB)
-                nodeB = nodeB.next
-                
+        while nodeA:
+            lenA += 1
+            nodeA = nodeA.next
+        while nodeB:
+            lenB += 1
+            nodeB = nodeB.next
+        nodeA, nodeB = headA, headB
+        while lenA > lenB:
+            nodeA = nodeA.next
+            lenA -= 1
+        while lenB > lenA:
+            nodeB = nodeB.next
+            lenB -= 1
+        while lenA > 0:
+            if nodeA is nodeB:
+                return nodeA
+            nodeA = nodeA.next
+            nodeB = nodeB.next
+            lenA -= 1
         return None
