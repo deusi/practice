@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
     def removePalindromeSub(self, s: str) -> int:
         if len(s) == 0:
             return 0
