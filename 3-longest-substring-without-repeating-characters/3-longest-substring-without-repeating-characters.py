@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n), since we go through each character once and add/remove operation is O(1)
+    # Space Complexity: O(n), since we can store entire string if it has unique characters
     def lengthOfLongestSubstring(self, s: str) -> int:
         characters = set()
         maxSubstring = 0
