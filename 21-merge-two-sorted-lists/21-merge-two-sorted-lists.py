@@ -17,8 +17,5 @@ class Solution:
                 node.next = list1
                 list1 = list1.next
             node = node.next 
-        if list1:
-            node.next = list1
-        elif list2:
-            node.next = list2
+        node.next = list1 or list2
         return root.next
