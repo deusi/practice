@@ -5,13 +5,15 @@
 #         self.next = None
 
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        fast = slow = head
-        while fast and fast.next:
+        if not head or not head.next:
+            return None
+        fast, slow = head.next.next, head.next
+        while fast and fast.next and fast != slow:
             fast = fast.next.next
             slow = slow.next
-            if fast == slow:
-                break
         if not fast or not fast.next:
             return None
         cur = head
