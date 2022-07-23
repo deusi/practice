@@ -5,7 +5,6 @@ class Solution:
         maxProfit = 0
         low = prices[0]
         for high in prices:
-            if high < low:
-                low = high
+            low = min(low, high)
             maxProfit = max(maxProfit, high - low)
         return maxProfit
