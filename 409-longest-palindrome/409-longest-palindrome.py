@@ -1,14 +1,10 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n)
     def longestPalindrome(self, s: str) -> int:
-        longest = 0
-        extra = False
+        longest, extra = 0, 0
         counter = collections.Counter(s)
         for value in counter.values():
-            if value % 2 == 0:
-                longest += value
-            elif value % 2 == 1:
-                longest += value - 1
-                extra = True
-        if extra:
-            longest += 1
-        return longest
+            extra = max(extra, value % 2)
+            longest += value - (value % 2)
+        return longest + extra
