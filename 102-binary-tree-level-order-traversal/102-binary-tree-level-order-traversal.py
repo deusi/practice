@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n), due to queue
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         result = []
         if not root:
