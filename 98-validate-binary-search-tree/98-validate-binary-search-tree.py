@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity O(n)
+    # Space Complexity: O(n)
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         stack = [(root, -math.inf, math.inf)]
         while stack:
