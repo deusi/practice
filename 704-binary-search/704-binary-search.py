@@ -4,7 +4,7 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         low, high = 0, len(nums) - 1
         while low <= high:
-            mid = (high + low) // 2
+            mid = low + (high - low) // 2
             if nums[mid] == target:
                 return mid
             elif target > nums[mid]:
