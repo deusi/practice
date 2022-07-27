@@ -7,14 +7,13 @@
 
 class Solution:
     # Runtime Complexity: O(log n) (degenerates to O(n) for unbalanced tree) 
-    # Space Complexity: O(n), due to recursion stack
+    # Space Complexity: O(1)
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
-        minV, maxV = min(p.val, q.val), max(p.val, q.val)
         node = root
         while node:
-            if node.val == minV or node.val == maxV or (node.val > minV and node.val < maxV):
-                return node
-            elif node.val > minV:
+            if node.val < p.val and node.val < q.val:
+                node = node.right
+            elif node.val > p.val and node.val > q.val:
                 node = node.left
             else:
-                node = node.right
+                return node
