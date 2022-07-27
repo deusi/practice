@@ -6,7 +6,7 @@
 #         self.right = None
 
 class Solution:
-    # Runtime Complexity: O(log n)
+    # Runtime Complexity: O(log n) (degenerates to O(n) for unbalanced tree) 
     # Space Complexity: O(n), due to recursion stack
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         minV, maxV = min(p.val, q.val), max(p.val, q.val)
