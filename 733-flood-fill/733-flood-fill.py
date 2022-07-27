@@ -1,6 +1,6 @@
 class Solution:
-    # Runtime Complexity: O(n), we would have to go through every node if all of them are the same
-    # Space Complexity: O(n), worst case is when the entire image is in old color
+    # Runtime Complexity: O(m*n), we would have to go through every node if all of them are the same
+    # Space Complexity: O(m*n), worst case is when the entire image is in old color
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         m, n = len(image), len(image[0])
         oldColor = image[sr][sc]
