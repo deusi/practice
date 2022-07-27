@@ -7,7 +7,7 @@
 
 class Solution:
     # Runtime Complexity: O(log n)
-    # Space Complexity: O(1)
+    # Space Complexity: O(n), due to recursion stack
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         minV, maxV = min(p.val, q.val), max(p.val, q.val)
         def lca(node):
