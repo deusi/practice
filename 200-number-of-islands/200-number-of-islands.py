@@ -1,6 +1,6 @@
 class Solution:
     # Runtime Complexity: O(m*n) - because of nested for loop
-    # Space Complexity: O(m*n), when queue deals with one hugh island
+    # Space Complexity: O(m*n), when queue deals with one high island
     def numIslands(self, grid: List[List[str]]) -> int:
         iCount = 0
         directions = [[-1, 0], [0, -1], [1, 0], [0, 1]]
