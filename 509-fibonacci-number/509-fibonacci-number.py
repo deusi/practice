@@ -1,7 +1,7 @@
 class Solution:
     # Runtime Complexity: O(n)
     # Space Complexity: O(n), used to store the results of previous calls to fib
-    @lru_cache
+    @cache
     def fib(self, n: int) -> int:
         if n < 2:
             return n
