@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(k) or O(1)
     def findAnagrams(self, s: str, p: str) -> List[int]:
         if len(s) < len(p): return []
         pLetters = collections.Counter(p)
