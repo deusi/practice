@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
     def characterReplacement(self, s: str, k: int) -> int:
         alphabet = [0 for _ in range(26)]
         longest, left, aSum = 0, 0, 0
