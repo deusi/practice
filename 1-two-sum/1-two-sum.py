@@ -1,6 +1,6 @@
 class Solution:
     # Runtime Complexity: O(n)
-    # Space Complexity: O(1)
+    # Space Complexity: O(n)
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         nMap = {}
         for i, n in enumerate(nums):
