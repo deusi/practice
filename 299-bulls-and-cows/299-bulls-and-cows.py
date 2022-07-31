@@ -6,9 +6,9 @@ class Solution:
             if s in gMap:
                 iMap[s] = min(sMap[s], gMap[s])
         bulls, cows = 0, 0
-        for s, g in zip(secret, guess):
-            if s == g:
-                iMap[s] -= 1
+        for i in range(len(secret)):
+            if secret[i] == guess[i]:
+                iMap[secret[i]] -= 1
                 bulls += 1
         cows = sum(iMap.values())
         return str(bulls) + 'A' + str(cows) + 'B'
