@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n)
     def getHint(self, secret: str, guess: str) -> str:
         iMap = collections.Counter(secret) & collections.Counter(guess)
         bulls, cows = 0, 0
