@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # O(n)
     def findPermutation(self, s: str) -> List[int]:
         perm = []
         dQueue = [1]
