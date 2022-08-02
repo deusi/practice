@@ -1,6 +1,8 @@
 from heapq import *
 
 class Solution:
+    # Runtime Complexity: O(n * log n)
+    # Space Complexity: O(n)
     def lastStoneWeight(self, stones: List[int]) -> int:
         maxHeap = []
         for stone in stones:
