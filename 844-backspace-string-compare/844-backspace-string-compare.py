@@ -5,9 +5,9 @@ class Solution:
             while idx >= 0:
                 if str[idx] == '#':
                     backspaces += 1
+                elif backspaces == 0:
+                    break
                 else:
-                    if backspaces == 0:
-                        break
                     backspaces -= 1
                 idx -= 1
             return idx
