@@ -5,7 +5,7 @@ class Solution:
     # Space Complexity O(k)
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
         maxHeap = []
-        for i in range(len(matrix)):
+        for i in range(min(k, len(matrix))):
             for j in range(len(matrix)):
                 heappush(maxHeap, -matrix[i][j])
                 if len(maxHeap) > k:
