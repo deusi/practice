@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n log n)
+    # Space Complexity: O(n)
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         counter = collections.Counter(words)
         maxHeap = []
