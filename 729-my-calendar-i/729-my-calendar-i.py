@@ -3,6 +3,8 @@ class MyCalendar:
     def __init__(self):
         self.slots = collections.deque()
 
+    # Runtime Complexity: O(n) - due to for loop/insert
+    # Space Complexity: O(n) - due to insert
     def book(self, start: int, end: int) -> bool:
         if not self.slots or self.slots[-1][1] <= start:
             self.slots.append([start, end])
