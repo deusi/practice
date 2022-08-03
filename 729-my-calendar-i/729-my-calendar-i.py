@@ -1,7 +1,7 @@
 class MyCalendar:
 
     def __init__(self):
-        self.slots = []
+        self.slots = collections.deque()
 
     # Runtime Complexity: O(n) - due to for loop/insert
     # Space Complexity: O(n) - due to insert
@@ -10,7 +10,7 @@ class MyCalendar:
             self.slots.append([start, end])
             return True
         elif end <= self.slots[0][0]:
-            self.slots = [[start, end]] + self.slots
+            self.slots.appendleft([start, end])
             return True
         for i in range(1, len(self.slots)):
             if self.slots[i - 1][1] <= start and self.slots[i][0] >= end:
