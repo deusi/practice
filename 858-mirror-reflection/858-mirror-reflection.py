@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(b), where b is the number of bounces to reach a deflector
+    # Space Complexity: O(1)
     def mirrorReflection(self, p: int, q: int) -> int:
         isEast = True
         num, curPos = q // p, q % p
