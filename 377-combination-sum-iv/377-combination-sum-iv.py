@@ -1,6 +1,6 @@
 class Solution:
-    # Runtime Complexity:
-    # Space Complexity: 
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n) - due to recursion stack
     def combinationSum4(self, nums: List[int], target: int) -> int:
         @cache
         def bt(curSum):
