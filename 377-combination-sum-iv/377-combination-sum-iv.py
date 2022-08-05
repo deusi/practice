@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity:
+    # Space Complexity: 
     def combinationSum4(self, nums: List[int], target: int) -> int:
         @cache
         def bt(curSum):
