@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n)
     def countVowelPermutation(self, n: int) -> int:
         vowels = ['a', 'e', 'i', 'o', 'u']
         @cache
