@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n), where both queue, cols and output take n space
     def verticalOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root: 
             return []
