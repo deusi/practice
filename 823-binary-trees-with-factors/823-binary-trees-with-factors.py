@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n^2)
+    # Space Complexity: O(n) for hashmap
     def numFactoredBinaryTrees(self, arr: List[int]) -> int:
         MOD = 10**9 + 7
         arr.sort()
