@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n) to traverse every element in the array
+    # Space Complexity: O(n) to construct the BST + recursion stack
     def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
         def bst(left, right):
             if left > right:
