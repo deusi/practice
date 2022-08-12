@@ -6,14 +6,12 @@
 #         self.right = None
 
 class Solution:
-    # Runtime Complexity: O(log n) (degenerates to O(n) for unbalanced tree) 
-    # Space Complexity: O(1)
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         node = root
         while node:
-            if node.val < p.val and node.val < q.val:
+            if p.val > node.val and q.val > node.val:
                 node = node.right
-            elif node.val > p.val and node.val > q.val:
+            elif p.val < node.val and q.val < node.val:
                 node = node.left
             else:
                 return node
