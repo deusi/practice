@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
     def romanToInt(self, s: str) -> int:
         num = i = 0
         while i < len(s):
