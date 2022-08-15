@@ -4,6 +4,7 @@ class Solution:
     def romanToInt(self, s: str) -> int:
         num = i = 0
         while i < len(s):
+            # Could be slightly optimized (removing redundant checks), but I'm too lazy to do that
             if s[i] == 'I':
                 if i + 1 < len(s) and s[i+1] == 'V':
                     num += 4
