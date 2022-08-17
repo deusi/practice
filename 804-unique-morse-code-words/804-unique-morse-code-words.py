@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n *m), where n = len(words), m = len(word)
+    # Space Complexity: O(n) - when each element is unique
     def uniqueMorseRepresentations(self, words: List[str]) -> int:
         transformations = set()
         morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
