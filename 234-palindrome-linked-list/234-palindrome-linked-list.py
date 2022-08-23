@@ -28,4 +28,5 @@ class Solution:
                 return False
             prev = prev.next
             head = head.next
+        # TODO: restore the ll
         return True
