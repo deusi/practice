@@ -4,25 +4,18 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    # Runtime Complexity: O(n)
+    # Runtime Complexity: O(n), n/2 for finding the middle point, n/2 for reversing the ll, n/2 to compare the ll
     # Space Complexity: O(1)
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        length = 0
-        ptr = head
-        # find the length of the ll
-        while ptr:
-            length += 1
-            ptr = ptr.next
-        mid = (length // 2 + length % 2) - 1
-        midNode = head
-        
-        # get the middle node of the ll
-        for _ in range(mid):
-            midNode = midNode.next
-        cur, prev = midNode.next, None
-        midNode.next = None
+        cur, fast = head, head
+        while fast and fast.next:
+            cur = cur.next
+            fast = fast.next
+            if fast:
+                fast = fast.next
         
         # reverse the second half of the ll
+        prev = None
         while cur:
             tmp = cur.next
             cur.next = prev
