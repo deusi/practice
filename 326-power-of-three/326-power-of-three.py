@@ -1,5 +1,5 @@
 class Solution:
-    # Runtime Complexity: O(n)
+    # Runtime Complexity: O(log3 n)
     # Space Complexity: O(1)
     def isPowerOfThree(self, n: int) -> bool:
         num = 1
