@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(log n): O(log n) to get to len(n) and O(len(n)) to compare
+    # Space Complexity: O(len(n)) for dictionaries
     def reorderedPowerOf2(self, n: int) -> bool:
         sN = str(n)
         nDict = collections.Counter(sN)
