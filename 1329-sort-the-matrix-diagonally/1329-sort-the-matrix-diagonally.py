@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(m*n log min(m, n)) to go through matrix and sort each diagonal
+    # Space Complexity: O(min(m,n)) to store a sorted array
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
         for j in range(len(mat[0])):
             sortedDiagonal = []
