@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(m * n) to go over every element of the array and also fill the islands
+    # Space Complexity: O(min(m, n)), worst case the whole grid is an island, so we add every adjacent element to the queue
     def numIslands(self, grid: List[List[str]]) -> int:
         dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         islandCount = 0
