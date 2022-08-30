@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: (n^2) to reverse the columns and switch rows with columns
+    # Space Complexity: O(1)
     def rotate(self, matrix: List[List[int]]) -> None:
         """
         Do not return anything, modify matrix in-place instead.
