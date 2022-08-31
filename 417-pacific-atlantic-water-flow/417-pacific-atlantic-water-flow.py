@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(m*n), since we will go through each element in the worst case
+    # Space Complexity: O(m*n), since each element in an island might have water flow to p&a
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         pacific = collections.deque()
         atlantic = collections.deque()
