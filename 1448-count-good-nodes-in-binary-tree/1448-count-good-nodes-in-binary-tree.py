@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n), since we need to go through entire tree
+    # Space Complexity: O(n), if the is unbalanced and formes a ll
     def goodNodes(self, root: TreeNode) -> int:
         count = 0
         stack = [(root, root.val)]
