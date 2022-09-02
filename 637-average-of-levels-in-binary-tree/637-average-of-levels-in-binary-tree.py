@@ -10,13 +10,13 @@ class Solution:
         queue = collections.deque([root])
         while queue:
             levelLen = len(queue)
-            level = []
+            avg = 0
             for _ in range(levelLen):
                 node = queue.popleft()
-                level.append(node.val)
+                avg += node.val
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-            result.append(sum(level) / len(level))
+            result.append(avg / levelLen)
         return result
