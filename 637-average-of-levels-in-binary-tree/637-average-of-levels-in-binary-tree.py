@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n) - go over every node
+    # Space Complexity: O(n) to store queue
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         result = []
         queue = collections.deque([root])
