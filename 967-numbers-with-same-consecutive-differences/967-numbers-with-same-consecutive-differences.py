@@ -16,11 +16,7 @@ class Solution:
             if sum(nums) == 0:
                 start = 1
             for i in range(start, 10):
-                if len(nums) == 0:
-                    nums.append(i)
-                    bt(nums)
-                    nums.pop()
-                elif abs(i - nums[-1]) == k:
+                if len(nums) == 0 or abs(i - nums[-1]) == k:
                     nums.append(i)
                     bt(nums)
                     nums.pop()
