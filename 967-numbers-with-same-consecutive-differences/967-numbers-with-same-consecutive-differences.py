@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(2^n)
+    # Space Complexity: O(2^n)
     def numsSameConsecDiff(self, n: int, k: int) -> List[int]:
         result = []
         def listToInt(nums):
@@ -8,6 +10,7 @@ class Solution:
                 ans += nums[i]
             return ans
         
+        # could optimize to only go through candidate numbers
         def bt(nums):
             if len(nums) == n:
                 result.append(listToInt(nums))
