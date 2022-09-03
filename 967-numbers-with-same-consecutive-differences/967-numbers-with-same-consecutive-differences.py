@@ -1,13 +1,18 @@
 class Solution:
     def numsSameConsecDiff(self, n: int, k: int) -> List[int]:
         result = []
+        def listToInt(nums):
+            ans = nums[0]
+            for i in range(1, len(nums)):
+                ans *= 10
+                ans += nums[i]
+            return ans
         def bt(nums):
             if len(nums) == n:
-                st = [str(i) for i in nums]
-                result.append(int(''.join(st)))
+                result.append(listToInt(nums))
                 return
             start = 0
-            if len(nums) == 0 or sum(nums) == 0:
+            if sum(nums) == 0:
                 start = 1
             for i in range(start, 10):
                 if len(nums) == 0:
