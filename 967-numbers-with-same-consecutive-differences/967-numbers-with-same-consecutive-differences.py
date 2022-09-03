@@ -7,6 +7,7 @@ class Solution:
                 ans *= 10
                 ans += nums[i]
             return ans
+        
         def bt(nums):
             if len(nums) == n:
                 result.append(listToInt(nums))
@@ -24,6 +25,7 @@ class Solution:
                     bt(nums)
                     nums.pop()
             return
+        
         nums = []
         bt(nums)
         return result
