@@ -1,6 +1,6 @@
 class Solution:
     # Runtime Complexity: O(2^n)
-    # Space Complexity: O(2^n)
+    # Space Complexity: O(2^n) - stack
     def numsSameConsecDiff(self, n: int, k: int) -> List[int]:
         result = []
         def listToInt(nums):
