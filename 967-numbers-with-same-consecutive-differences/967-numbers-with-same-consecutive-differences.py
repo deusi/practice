@@ -10,7 +10,7 @@ class Solution:
                 ans += nums[i]
             return ans
         
-        # could optimize to only go through candidate numbers
+        # could optimize to only go through candidate numbers, but too lazy now
         def bt(nums):
             if len(nums) == n:
                 result.append(listToInt(nums))
