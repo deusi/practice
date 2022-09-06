@@ -5,7 +5,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n) to visit every node
+    # Space Complexity: O(n), due to stack recursion
     def pruneTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        # handle special case of completely prunned tree
         sentinel = TreeNode(0, None, root)
         def dfs(node):
             if not node:
