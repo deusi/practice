@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     # Runtime Complexity: O(n), since we nee to visit every node and then turn the result into string
-    # Space Complexity: O(n) to store the string
+    # Space Complexity: O(n) to store the string + recursion stack
     def tree2str(self, root: Optional[TreeNode]) -> str:
         string = []
         def dfs(node, string):
