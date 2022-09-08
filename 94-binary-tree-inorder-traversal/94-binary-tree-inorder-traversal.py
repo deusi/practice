@@ -5,7 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    traversal = []
+    # Runtime: O(n)
+    # Space: O(n)
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         traversal = []
         if not root:
