@@ -4,7 +4,7 @@ class HitCounter:
         self.seconds = []
 
     def hit(self, timestamp: int) -> None:
-        self._last300sec(timestamp)
+        #self._last300sec(timestamp)
         heapq.heappush(self.seconds, timestamp)
 
     def getHits(self, timestamp: int) -> int:
