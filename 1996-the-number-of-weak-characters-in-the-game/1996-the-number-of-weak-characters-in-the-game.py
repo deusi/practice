@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: O(n log n) to sort the list, n to go over every element
+    # Space Complexity: O(n), since heap might grow to the size of the entire list if there's only one a
     def numberOfWeakCharacters(self, properties: List[List[int]]) -> int:
         minHeap = []
         count = 0
