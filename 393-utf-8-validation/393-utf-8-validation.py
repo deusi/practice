@@ -1,4 +1,6 @@
 class Solution:
+    # Runtime Complexity: (n)
+    # Space Complexity: O(1)
     def validUtf8(self, data: List[int]) -> bool:
         bits = 0
         fmask = 1 << 6
