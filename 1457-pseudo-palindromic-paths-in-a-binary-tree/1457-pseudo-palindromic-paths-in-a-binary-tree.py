@@ -14,25 +14,23 @@ class Solution:
         def dfs(node, path):
             path[node.val - 1] += 1
             if not node.left and not node.right:
-                checkPalidrome(path)
+                n = len(path)
+                oneOdd = n % 2 == 1
+                for v in path:
+                    if oneOdd and v % 2 == 1:
+                        oneOdd = False
+                        continue
+                    if v % 2 == 0:
+                        continue
+                    break
+                else:
+                    self.pp += 1
             if node.left:
                 dfs(node.left, path)
             if node.right:
                 dfs(node.right, path)
             path[node.val - 1] -= 1
             
-        def checkPalidrome(counter):
-            n = len(counter)
-            oneOdd = n % 2 == 1
-            for v in counter:
-                if oneOdd and v % 2 == 1:
-                    oneOdd = False
-                    continue
-                if v % 2 == 0:
-                    continue
-                return False
-            self.pp += 1
-            return True
         
         dfs(root, path)
         return self.pp
