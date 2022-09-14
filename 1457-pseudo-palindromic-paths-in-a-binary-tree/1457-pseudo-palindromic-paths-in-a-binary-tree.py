@@ -5,27 +5,26 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # Runtime Complexity O(n^2 log n) - n to go over every element of bt and n to iterate over counter to check if palindrome, but it's done only at leaf level h = log n
-    # Space Complexity: O(n) to maintain hash table
+    # Runtime Complexity O(n log n) - n to go over every element of bt and O(1) to iterate over counter to check if palindrome, but it's done only at leaf level h = log n
+    # Space Complexity: O(1), since array is fixed
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
         self.pp = 0
-        def dfs(node, path, elementCount):
-            path[node.val] = path.get(node.val, 0) + 1
-            elementCount += 1
+        path = [0 for _ in range(9)]
+        
+        def dfs(node, path):
+            path[node.val - 1] += 1
             if not node.left and not node.right:
-                checkPalidrome(path, elementCount)
+                checkPalidrome(path)
             if node.left:
-                dfs(node.left, path, elementCount)
+                dfs(node.left, path)
             if node.right:
-                dfs(node.right, path, elementCount)
-            path[node.val] -= 1
-            if path[node.val] == 0:
-                del path[node.val]
-            elementCount -= 1
+                dfs(node.right, path)
+            path[node.val - 1] -= 1
             
-        def checkPalidrome(counter, n):
+        def checkPalidrome(counter):
+            n = len(counter)
             oneOdd = n % 2 == 1
-            for v in counter.values():
+            for v in counter:
                 if oneOdd and v % 2 == 1:
                     oneOdd = False
                     continue
@@ -35,5 +34,5 @@ class Solution:
             self.pp += 1
             return True
         
-        dfs(root, collections.Counter(), 0)
+        dfs(root, path)
         return self.pp
