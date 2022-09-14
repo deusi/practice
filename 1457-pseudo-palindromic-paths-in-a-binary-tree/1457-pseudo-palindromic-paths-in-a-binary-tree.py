@@ -6,7 +6,7 @@
 #         self.right = right
 class Solution:
     # Runtime Complexity O(n) - n to go over every element of bt and O(1) to iterate over counter to check if palindrome, but it's done only at leaf level h = log n
-    # Space Complexity: O(1), since array is fixed
+    # Space Complexity: O(h), for recursion stack
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
         self.pp = 0
         path = [0 for _ in range(9)]
