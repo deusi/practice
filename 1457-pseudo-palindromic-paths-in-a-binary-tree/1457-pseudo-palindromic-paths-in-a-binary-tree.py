@@ -14,6 +14,7 @@ class Solution:
         def dfs(node, path):
             path[node.val - 1] += 1
             if not node.left and not node.right:
+                # put inside instead of separate function for slight performance gain
                 n = len(path)
                 oneOdd = n % 2 == 1
                 for v in path:
