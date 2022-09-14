@@ -5,6 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity O(n^2 log n) - n to go over every element of bt and n to iterate over counter to check if palindrome, but it's done only at leaf level h = log n
+    # Space Complexity: O(n) to maintain hash table
     def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
         self.pp = 0
         def dfs(node, path, elementCount):
