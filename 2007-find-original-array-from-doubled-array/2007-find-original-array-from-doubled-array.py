@@ -9,10 +9,11 @@ class Solution:
         counter = collections.Counter(changed)
         original = []
         for c in changed:
-            if 2*c in counter and counter[c] > 0 and counter[2*c] > 0:
-                if c == 0 and counter[c] == 1:
-                    continue 
-                original.append(c)
+            if counter[c] > 0:
                 counter[c] -= 1
-                counter[2*c] -= 1
-        return original if n == 2 * len(original) else []
+                if 2*c in counter and counter[2*c] > 0:
+                    original.append(c)
+                    counter[2*c] -= 1
+                else:
+                    return []
+        return original
