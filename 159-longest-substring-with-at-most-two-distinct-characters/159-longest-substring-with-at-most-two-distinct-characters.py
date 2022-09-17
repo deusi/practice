@@ -1,7 +1,8 @@
 class Solution:
+    # Runtime Complexity: O(n) to go over string of len n
+    # Space Complexity: O(1), since hashmap contains at most three values
     def lengthOfLongestSubstringTwoDistinct(self, s: str) -> int:
-        substrLength = 0
-        left = 0
+        substrLength, left = 0, 0
         counter = {}
         for right in range(len(s)):
             rWord = s[right]
