@@ -1,7 +1,7 @@
 class Solution:
     # O(n log n) for sorting
-    # O(1) for sorting in place
-    # Total Time: 25 m - tried to come up with O(m+n) solution
+    # O(n) for sorting in place
+    # Total Time: 25 m - tried to come up with O(m+n) solution with O(1) space complexity
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
