@@ -6,24 +6,21 @@ class Solution:
         left, right, top, bottom = 0, len(matrix[0]), 0, len(matrix)
         verDir, horDir = 0, 1
         curX, curY = 0, 0
+        dirs = [(0, 1),(1, 0),(0, -1),(-1, 0)]
         result = []
         while left < right and top < bottom:
             result.append(matrix[curX][curY])
             if curX + verDir >= bottom:
-                verDir = 0
-                horDir = -1
+                verDir, horDir = dirs[2]
                 right -= 1
             if curX + verDir < top:
-                verDir = 0
-                horDir = 1
+                verDir, horDir = dirs[0]
                 left += 1
             if curY + horDir >= right:
-                verDir = 1
-                horDir = 0
+                verDir, horDir = dirs[1]
                 top += 1
             if curY + horDir < left:
-                verDir = -1
-                horDir = 0
+                verDir, horDir = dirs[3]
                 bottom -= 1
             curX += verDir
             curY += horDir
