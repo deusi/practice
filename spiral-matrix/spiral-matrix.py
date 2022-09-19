@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(m*n) to go over every element of the matrix
+    # Space Complexity: O(1) - excluding resulting array, we only use boundaries
+    # Total Time: 31 m
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         left, right, top, bottom = 0, len(matrix[0]), 0, len(matrix)
         verDir, horDir = 0, 1
