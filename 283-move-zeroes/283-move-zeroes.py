@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
+    # Total Time: 11 m
     def moveZeroes(self, nums: List[int]) -> None:
         """
         Do not return anything, modify nums in-place instead.
