@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(n) to go through every element (we would also need to add nums, but it's roughly n + k, k = len of nums)
+    # Space Complexity: O(1), since we store output in existing array
+    # Total Time: 35 m
     def compress(self, chars: List[str]) -> int:
         if len(chars) == 1:
             return 1
