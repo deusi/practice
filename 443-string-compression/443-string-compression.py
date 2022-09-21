@@ -23,5 +23,4 @@ class Solution:
                 length += 1
                 chars[insert] = num
                 insert += 1
-        print(length)
         return length
