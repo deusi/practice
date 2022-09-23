@@ -1,8 +1,11 @@
 class Solution:
-    # 50 m
+    # Runtime Complexity: O(m * n * k), where k is the number of times we need to iterate before the board is the same
+    # m*n for both findCandies and propagateZeroes
+    # Space Complexity: O(m*n), since we would have to store all the indicies in the set in the worst case
+    # Total Time: more than I'm comfortable admitting
     def candyCrush(self, board: List[List[int]]) -> List[List[int]]:
         dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-        # find 'islands'
+
         def findCandies():
             m, n = len(board), len(board[0])
             found = False
@@ -40,11 +43,9 @@ class Solution:
             if len(crash):
                 found = True
                 for r, c in crash:
-                    board[r][c] = 0
-                    
+                    board[r][c] = 0        
                 
-            return found
-                    
+            return found        
             
          
         def propagateZeroes():
