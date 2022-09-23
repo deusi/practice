@@ -58,11 +58,8 @@ class Solution:
                         zeroPtr -= 1
                     elsePtr -= 1
         
-        iterate = True
-        while iterate:
-            iterate = findCandies()
-            if iterate:
-                propagateZeroes()
+        while findCandies():
+            propagateZeroes()
                 
         return board
             
