@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+    # Runtime Complexity: 
+    # Space Complexity: 
+    # Total Time: 
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         head = l1
         rem = 0
@@ -18,8 +21,7 @@ class Solution:
             num = l1.val + rem
             l1.val = num % 10
             rem = num // 10
-            prev = l1
-            l1 = l1.next
+            prev, l1 = l1, l1.next
         while l2:
             num = l2.val + rem
             prev.next = ListNode(num % 10)
