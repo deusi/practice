@@ -5,7 +5,7 @@
 #         self.next = next
 class Solution:
     # Runtime Complexity: O(max(m, n))
-    # Space Complexity: O(n), worst case m = 0
+    # Space Complexity: O(1)
     # Total Time: 13 m
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
         l1, l2 = list1, list2
