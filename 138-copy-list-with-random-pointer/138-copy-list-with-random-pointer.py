@@ -8,9 +8,9 @@ class Node:
 """
 
 class Solution:
-    # Runtime Complexity: 
-    # Space Complexity: 
-    # Total Time: 
+    # Runtime Complexity: O(n), n to go over the list, create new nodes and and put them to a map and n to assign values to new list
+    # Space Complexity: O(n), since map has to store all the mappings of origNodes -> newNodes
+    # Total Time: 27 m
     def copyRandomList(self, head: 'Node') -> 'Node':
         sentinel = Node(-1)
         newList = sentinel
