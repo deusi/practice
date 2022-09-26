@@ -4,6 +4,8 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         num = 0
         l1Len, l2Len = 0, 0
