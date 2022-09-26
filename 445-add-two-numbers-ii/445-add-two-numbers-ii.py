@@ -4,6 +4,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+    # Runtime Complexity: O(max(m, n)) to create stacks and add numbers
+    # Space Complexity: O(max(m,n)) to store stack
+    # Total Time: 14 m
     def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         stack1, stack2 = [], []
         while l1 or l2:
