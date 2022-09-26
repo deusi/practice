@@ -15,7 +15,7 @@ class Solution:
                 l2 = l2.next
         prev = None
         rem = 0
-        while stack1 or stack2:
+        while rem or stack1 or stack2:
             num1, num2 = 0, 0
             if stack1:
                 num1 = stack1.pop()
@@ -26,7 +26,4 @@ class Solution:
             cur = ListNode(num % 10, prev)
             prev = cur
             
-        if rem:
-            cur = ListNode(rem, prev)
-            prev = cur
         return prev
