@@ -5,6 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n) due to stack recursion
+    # Total Time: 42 m for recursive and (failed) solutions
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         minVal = -inf
         def inorder(node):
