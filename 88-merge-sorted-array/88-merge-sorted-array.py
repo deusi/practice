@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(1)
+    # Total Time: 12 m
     def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         """
         Do not return anything, modify nums1 in-place instead.
