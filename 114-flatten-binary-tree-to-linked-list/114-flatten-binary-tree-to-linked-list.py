@@ -5,12 +5,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n) to go over every node to add it to inorder list and n to traverse the list and set up the pointers
+    # Space Complexity: O(n) to keep the list of nodes
+    # Total Time: 17 m
     def flatten(self, root: Optional[TreeNode]) -> None:
         """
         Do not return anything, modify root in-place instead.
         """
         if not root:
-            return root
+            return
+        
         stack = [root]
         inorder = []
         while stack:
