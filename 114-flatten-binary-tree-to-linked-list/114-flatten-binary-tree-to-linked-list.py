@@ -15,15 +15,18 @@ class Solution:
         if not root:
             return
         
-        stack = [root]
-        inorder = []
-        while stack:
-            node = stack.pop()
-            inorder.append(node)
-            if node.right:
-                stack.append(node.right)
-            if node.left:
-                stack.append(node.left)
-                node.left = None
-        for i in range(1, len(inorder)):
-            inorder[i-1].right = inorder[i]
+        def convert(node):
+            if not node:
+                return node
+            if not node.left and not node.right:
+                return node
+            left = convert(node.left)
+            right = convert(node.right)
+            if left:
+                tmp = node.right
+                node.right = node.left
+                left.right = tmp
+            node.left = None
+            return right if right else left
+        
+        convert(root)
