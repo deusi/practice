@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(len(n)) to go over every digit of num
+    # Space Complexity: O(len(n)) to store digit values
+    # Total Time: ~30 mins+
     def numberToWords(self, num: int) -> str:
         if not num:
             return "Zero"
@@ -17,20 +20,17 @@ class Solution:
             if num % 100 in teens:
                 words.append(teens[num % 100])
                 num = num // 100
-                numCount += 2
             else:
                 if num % 10:
                     words.append(numToStr[num % 10])
                 num = num // 10
-                numCount += 1
                 if num % 10:
                     words.append(tys[num % 10])
                 num = num // 10
-                numCount += 1
             if num % 10 > 0:
                 words.append('Hundred')
                 words.append(numToStr[num % 10])
             num = num // 10
-            numCount += 1
+            numCount += 3
         words.reverse()
         return " ".join(words)
