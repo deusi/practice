@@ -9,6 +9,9 @@ class Node:
 """
 
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n) to maintain the queue
+    # Total Time: 8 m
     def connect(self, root: 'Optional[Node]') -> 'Optional[Node]':
         if not root:
             return root
