@@ -9,8 +9,8 @@ class Node:
 """
 
 class Solution:
-    #
-    #
+    # O(n), since we go over each node once
+    # O(1), no extra space
     # Total Time: 50m for follow-up solution
     def connect(self, root: 'Node') -> 'Node':
         node = root
