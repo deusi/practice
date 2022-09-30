@@ -13,10 +13,9 @@ class Solution:
     # O(1), no extra space
     # Total Time: 50m for follow-up solution
     def connect(self, root: 'Node') -> 'Node':
-        node = root
-        while node:
+        curNode = root
+        while curNode:
             nextNode = None
-            curNode = node
             prev = None
             while curNode:
                 if not prev:
@@ -34,6 +33,6 @@ class Solution:
                         prev = curNode.right
                 curNode = curNode.next
                 
-            node = nextNode       
+            curNode = nextNode       
         
         return root
