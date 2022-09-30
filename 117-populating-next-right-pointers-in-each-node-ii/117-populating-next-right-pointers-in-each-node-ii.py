@@ -13,9 +13,8 @@ class Solution:
     #
     # Total Time: 50m for follow-up solution
     def connect(self, root: 'Node') -> 'Node':
-        def populate(node):
-            if not node:
-                return
+        node = root
+        while node:
             nextNode = None
             curNode = node
             prev = None
@@ -35,7 +34,6 @@ class Solution:
                         prev = curNode.right
                 curNode = curNode.next
                 
-            populate(nextNode)
-                
-        populate(root)
+            node = nextNode       
+        
         return root
