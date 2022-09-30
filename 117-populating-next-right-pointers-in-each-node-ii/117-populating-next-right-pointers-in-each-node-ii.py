@@ -13,8 +13,8 @@ class Solution:
         def populate(node):
             if not node:
                 return
-            if not node.left and not node.right:
-                return
+
+            nextNode = None
             
             curNode = node
             prev = None
@@ -22,8 +22,10 @@ class Solution:
                 if not prev:
                     if curNode.left:
                         prev = curNode.left
+                        nextNode = prev
                     elif curNode.right:
                         prev = curNode.right
+                        nextNode = prev
                 if prev:
                     if curNode.left and curNode.left != prev:
                         prev.next = curNode.left
@@ -33,10 +35,7 @@ class Solution:
                         prev = curNode.right
                 curNode = curNode.next
                 
-            if node.left:
-                populate(node.left)
-            if node.right:
-                populate(node.right)
+            populate(nextNode)
                 
         populate(root)
         return root
