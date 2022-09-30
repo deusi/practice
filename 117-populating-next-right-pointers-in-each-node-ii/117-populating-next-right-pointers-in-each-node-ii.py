@@ -9,6 +9,9 @@ class Node:
 """
 
 class Solution:
+    #
+    #
+    # Total Time: 50m for follow-up solution
     def connect(self, root: 'Node') -> 'Node':
         def populate(node):
             if not node:
