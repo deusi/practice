@@ -13,19 +13,16 @@ class Solution:
         def populate(node):
             if not node:
                 return
-
             nextNode = None
-            
             curNode = node
             prev = None
             while curNode:
                 if not prev:
                     if curNode.left:
                         prev = curNode.left
-                        nextNode = prev
                     elif curNode.right:
                         prev = curNode.right
-                        nextNode = prev
+                    nextNode = prev
                 if prev:
                     if curNode.left and curNode.left != prev:
                         prev.next = curNode.left
