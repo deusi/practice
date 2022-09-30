@@ -16,7 +16,6 @@ class Solution:
             if not node.left and not node.right:
                 return
             
-            
             curNode = node
             prev = None
             while curNode:
