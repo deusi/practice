@@ -17,22 +17,25 @@ class Solution:
         while curNode:
             nextNode = None
             prev = None
-            while curNode:
-                if not prev:
-                    if curNode.left:
-                        prev = curNode.left
-                    elif curNode.right:
-                        prev = curNode.right
+            while not prev and curNode:
+                if curNode.left:
+                    prev = curNode.left
                     nextNode = prev
-                if prev:
-                    if curNode.left and curNode.left != prev:
-                        prev.next = curNode.left
-                        prev = curNode.left
-                    if curNode.right and curNode.right != prev:
+                if curNode.right:
+                    if not prev:
+                        prev = curNode.right
+                        nextNode = prev
+                    else:
                         prev.next = curNode.right
                         prev = curNode.right
                 curNode = curNode.next
-                
-            curNode = nextNode       
-        
+            while curNode:
+                if curNode.left:
+                    prev.next = curNode.left
+                    prev = curNode.left
+                if curNode.right:
+                    prev.next = curNode.right
+                    prev = curNode.right
+                curNode = curNode.next
+            curNode = nextNode
         return root
