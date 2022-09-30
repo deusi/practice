@@ -7,23 +7,37 @@ class Node:
         self.right = right
         self.next = next
 """
-from collections import deque
 
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
-        if not root:
-            return root
-        queue = deque([root])
-        while queue:
-            level = len(queue)
+        def populate(node):
+            if not node:
+                return
+            if not node.left and not node.right:
+                return
+            
+            
+            curNode = node
             prev = None
-            for _ in range(level):
-                node = queue.popleft()
+            while curNode:
+                if not prev:
+                    if curNode.left:
+                        prev = curNode.left
+                    elif curNode.right:
+                        prev = curNode.right
                 if prev:
-                    prev.next = node
-                if node.left:
-                    queue.append(node.left)
-                if node.right:
-                    queue.append(node.right)
-                prev = node
+                    if curNode.left and curNode.left != prev:
+                        prev.next = curNode.left
+                        prev = curNode.left
+                    if curNode.right and curNode.right != prev:
+                        prev.next = curNode.right
+                        prev = curNode.right
+                curNode = curNode.next
+                
+            if node.left:
+                populate(node.left)
+            if node.right:
+                populate(node.right)
+                
+        populate(root)
         return root
