@@ -5,6 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n)
+    # Space Complexity: O(n)
+    # Total Time: 12m
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
         result = []
         if not root:
