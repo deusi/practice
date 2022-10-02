@@ -1,19 +1,26 @@
 class Solution:
-    # Runtime Complexity: O(m * n) to go over every element of the array and also fill the islands
-    # Space Complexity: O(min(m, n)), worst case the whole grid is an island, so we add every adjacent element to the queue
+    # Runtime Complexity: O(m*n) to go over every num in a grid
+    # Space Complexity: O(max(m, n)) to store queue
+    # Total Time: 9 m
     def numIslands(self, grid: List[List[str]]) -> int:
-        dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-        islandCount = 0
-        for r in range(len(grid)):
-            for c in range(len(grid[0])):
-                if grid[r][c] == '1':
-                    islandCount += 1
-                    grid[r][c] = '2'
-                    queue = collections.deque([(r, c)])
+        islands = 0
+        m, n = len(grid), len(grid[0])
+        queue = collections.deque()
+        dirs = [(0, 1), (1, 0), (0, -1),(-1, 0)]
+        for i in range(m):
+            for j in range(n):
+                if grid[i][j] == '1':
+                    islands += 1
+                    queue.append((i, j))
                     while queue:
-                        cR, cC = queue.popleft()
+                        r, c = queue.popleft()
                         for d1, d2 in dirs:
-                            if cR + d1 >= 0 and cR + d1 < len(grid) and cC + d2 >= 0 and cC + d2 < len(grid[0]) and grid[cR + d1][cC + d2] == '1':
-                                grid[cR + d1][cC + d2] = '2'
-                                queue.append((cR + d1, cC + d2))
-        return islandCount
+                            nR, nC = r + d1, c + d2
+                            if nR < 0 or nC < 0 or nR >= m or nC >= n:
+                                continue
+                            if grid[nR][nC] == '0':
+                                continue
+                            grid[nR][nC] = '0'
+                            queue.append((nR, nC))
+        return islands
+                    
