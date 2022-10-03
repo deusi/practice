@@ -5,6 +5,9 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Runtime Complexity: O(n), since the node is the rightmost leaf in the worst case
+    # Space Complexity: O(n) due to stack recursion
+    # Total Time: 20m (for rec sol)
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
         count = 0
         def findElem(node):
