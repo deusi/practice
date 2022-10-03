@@ -12,7 +12,7 @@ class Solution:
             if not node:
                 return 0
             ans = 0
-            if node.left:
+            if node.left and count < k:
                 ans += findElem(node.left)
             count += 1
             if count == k:
