@@ -1,6 +1,6 @@
 class Solution:
-    # Runtime Complexity: O(n*k^c) - n to go over every element of s and k for multiplying nested elements and c is count of k
-    # Space Complexity: O(sum(n*k^c))
+    # Runtime Complexity: O(n*k) - n to go over every element of s and k for multiplying nested elements
+    # Space Complexity: O(n*k)
     # Total Time: 27m
     def decodeString(self, s: str) -> str:
         def decode(i):
