@@ -1,7 +1,7 @@
 class Solution:
-    #
-    #
-    # Total Time 15 m + 
+    # Runtime Complexity: O(n), since we go over every element
+    # Space Complexity: O(n), since stack can grow to the size of n
+    # Total Time 15 m + 7 m to make it look prettier
     def isValid(self, s: str) -> bool:
         stack = []
         pMap = {'(': ')', '[': ']', '{': '}'}
