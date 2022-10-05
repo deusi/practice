@@ -9,6 +9,9 @@ class Node:
 """
 
 class Solution:
+    # Runtime Complexity: O(n), where n is the length of the flattened list
+    # Space Complexity: O(k), where k is the depth of multilevel ll
+    # Total Time: 22 m
     def flatten(self, head: 'Node') -> 'Node':
         def recFlatten(node):
             prev = None
