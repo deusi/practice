@@ -1,16 +1,16 @@
 class Solution:
+    #
+    #
+    # Total Time 15 m + 
     def isValid(self, s: str) -> bool:
         stack = []
+        pMap = {'(': ')', '[': ']', '{': '}'}
         for p in s:
-            if p == '(' or p == '[' or p == '{':
+            if p in pMap:
                 stack.append(p)
+            elif not stack or p != pMap[stack[-1]]:
+                return False
             else:
-                if not stack:
-                    stack.append(p)
-                    break
-                l = stack[-1]
-                if l == '(' and p != ')' or l == '[' and p != ']' or l == '{' and p != '}':
-                    break
                 stack.pop()
         return len(stack) == 0
             
