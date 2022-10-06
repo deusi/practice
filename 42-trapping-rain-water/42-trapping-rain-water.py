@@ -7,14 +7,12 @@ class Solution:
         water, left, prev = 0, 0, 0
         for h in height:
             if h >= left:
-                minWall = min(left, h)
                 while stack:
-                    water += minWall - stack.pop()
+                    water += left - stack.pop()
                 left = h
             stack.append(h)
         while stack:
             e = stack.pop()
             prev = max(prev, e)
-            minWall = min(left, prev)
-            water += minWall - e
+            water += prev - e
         return water
