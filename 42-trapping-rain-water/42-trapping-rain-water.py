@@ -1,6 +1,6 @@
 class Solution:
-    # Runtime Complexity: 
-    # Space Complexity: 
+    # Runtime Complexity: O(n), since we add and pop the same elements
+    # Space Complexity: O(n) to keep the stack
     # Total Time: 30 m
     def trap(self, height: List[int]) -> int:
         stack = []
