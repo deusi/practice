@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(n log n) for sorting
+    # Space Complexity: O(n) to maintain heap
+    # Total Time: 22 m
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         minHeap = []
         intervals.sort()
