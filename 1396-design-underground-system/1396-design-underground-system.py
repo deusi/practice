@@ -1,3 +1,4 @@
+# All methods run in O(1), total space complexity of a class is O(n^2), where n is the number of distinct stations
 class UndergroundSystem:
 
     def __init__(self):
