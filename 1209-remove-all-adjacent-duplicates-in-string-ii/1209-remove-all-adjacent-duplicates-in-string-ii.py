@@ -4,8 +4,8 @@ class Solution:
         for c in s:
             if stack[-1][0] == c:
                 stack[-1][1] += 1
+                if stack[-1][1] == k:
+                    stack.pop()
             else:
                 stack.append([c, 1])
-            if stack[-1][1] == k:
-                stack.pop()
         return "".join(char * count for char, count in stack[1:])
