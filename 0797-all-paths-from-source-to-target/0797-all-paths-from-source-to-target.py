@@ -1,5 +1,5 @@
 class Solution:
-    # Runtime Complexity: O(n), since we visit every node once
+    # Runtime Complexity: O(2^N * n)
     # Space Complexity: O(n) to store the path
     # Total Time: 8 m
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
