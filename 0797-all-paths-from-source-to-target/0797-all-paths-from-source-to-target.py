@@ -1,6 +1,6 @@
 class Solution:
     # Runtime Complexity: O(2^N * n)
-    # Space Complexity: O(n) to store the path
+    # Space Complexity: O(n)
     # Total Time: 8 m
     def allPathsSourceTarget(self, graph: List[List[int]]) -> List[List[int]]:
         n = len(graph) - 1
