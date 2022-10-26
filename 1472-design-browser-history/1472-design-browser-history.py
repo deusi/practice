@@ -3,7 +3,8 @@ class DLL:
         self.val = val
         self.prev = prev
         self.next = next
-
+        
+# Total Time: 12 m
 class BrowserHistory:
 
     def __init__(self, homepage: str):
