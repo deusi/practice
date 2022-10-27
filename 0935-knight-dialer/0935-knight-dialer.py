@@ -12,6 +12,6 @@ class Solution:
         
         answer = 0
         for i in range(0, 10):
-            answer += dfs(i, 1)
+            answer += dfs(i, 1) % (10** 9 + 7)
             
         return answer % (10** 9 + 7)
