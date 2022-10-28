@@ -1,4 +1,7 @@
 class Solution:
+    # Runtime Complexity: O(n^2)
+    # Space Complexity: O(n)
+    # Total Time: 15 m + prev tries
     def invalidTransactions(self, transactions: List[str]) -> List[str]:
         invalid = [False for _ in range(len(transactions))]
         names, times, prices, cities = [], [], [], []
