@@ -10,6 +10,10 @@
 #        """
 
 class Solution:
+    # Assume HtmlParser.getUrls(url) is O(1) for complexity purposes
+    # Runtime Complexity: O(n * k), where n is every url and k is size of url, since we need to split it to check
+    # Space Complexity: O(n) to maintatin queue
+    # Total Time: 16 m
     def crawl(self, startUrl: str, htmlParser: 'HtmlParser') -> List[str]:
         allUrls = set()
         hostname = startUrl.split('/')[2]
