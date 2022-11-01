@@ -5,6 +5,9 @@ class DLL:
         self.next = next
 
 class Solution:
+    # Runtime Complexity: O(k*n^2), since we need to remove all but one nodes and also to iterate k elements at a time
+    # Space Complexity: O(n) to build a doubly linked list
+    # Total Time: 17 m
     def findTheWinner(self, n: int, k: int) -> int:
         first = DLL(1)
         cur = first
